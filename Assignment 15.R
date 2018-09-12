@@ -59,6 +59,14 @@ View(fbtrain); View(fbtest)
 train<-(fbtrain); test<-(fbtest)
 head(train); head(test)
 
+# removing overlapping observations if any
+distinct(train)
+
+# list the levels for the class
+sapply(train, class)
+
+
+
 a. Predict the no of comments in next H hrs
 
 
@@ -147,8 +155,8 @@ final <- cbind(test,pred)
 final
 head(final)
 
-finaldf<-write.csv(final,"final_probs.csv")
-finaldf
+final_print<-write.csv(final,"final_probs.csv")
+final_print
 
 
 
